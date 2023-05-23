@@ -1,0 +1,25 @@
+{
+  "cli": {
+    "version": ">= 2.6.0",
+    "promptToConfigurePushNotifications": false
+  },
+  "build": {
+    "development-simulator": {
+      "ios": {
+        "simulator": true
+      },
+      "distribution": "internal",
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "development": {
+      "distribution": "internal",
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
