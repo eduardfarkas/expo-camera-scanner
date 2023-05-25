@@ -15,6 +15,7 @@ declare global {
 export type RootStackParamList = {
   Main: undefined;
   Camera: undefined;
+  Zoom: undefined;
   Picture: { pictureData: CameraCapturedPicture };
 };
 

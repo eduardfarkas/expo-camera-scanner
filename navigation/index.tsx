@@ -12,10 +12,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
 import { RootStackParamList } from "./types";
-import LinkingConfiguration from "./LinkingConfiguration";
 import MainScreen from "../screens/MainScreen";
 import CameraScreen from "../screens/CameraScreen";
 import PictureScreen from "../screens/PictureScreen";
+import ZoomScreen from "../screens/ZoomScreen";
 
 export default function Navigation({
   colorScheme,
@@ -24,7 +24,7 @@ export default function Navigation({
 }) {
   return (
     <NavigationContainer
-      linking={LinkingConfiguration}
+      // linking={LinkingConfiguration}
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
     >
       <RootNavigator />
@@ -54,6 +54,11 @@ function RootNavigator() {
       <Stack.Screen
         name="Picture"
         component={PictureScreen}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name="Zoom"
+        component={ZoomScreen}
         options={{ headerShown: true }}
       />
     </Stack.Navigator>
