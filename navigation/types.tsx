@@ -4,20 +4,22 @@
  */
 
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { CameraCapturedPicture } from "expo-camera";
+import { ImageResult } from "expo-image-manipulator/src/ImageManipulator.types";
 
 declare global {
-  namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
-  }
+    namespace ReactNavigation {
+        interface RootParamList extends RootStackParamList {}
+    }
 }
 
 export type RootStackParamList = {
-  Main: undefined;
-  Camera: undefined;
-  Zoom: undefined;
-  Picture: { pictureData: CameraCapturedPicture };
+    Main: undefined;
+    Camera: undefined;
+    Zoom: undefined;
+    Picture: { photos: ImageResult[] };
 };
 
-export type RootScreenProps<T extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, T>;
+export type RootScreenProps<T extends keyof RootStackParamList> = NativeStackScreenProps<
+    RootStackParamList,
+    T
+>;
